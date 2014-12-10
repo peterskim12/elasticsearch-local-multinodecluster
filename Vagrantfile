@@ -10,6 +10,7 @@ def machine(cfg, name, ip)
     m.vm.hostname = name
     m.vm.network :private_network, ip: ip
 
+    m.vm.provision :shell, path: "bootstrap.sh"
     m.vm.provision :puppet do |puppet|
       puppet.manifests_path = "puppet/manifests"
       puppet.module_path = "puppet/modules"

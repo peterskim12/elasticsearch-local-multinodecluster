@@ -48,10 +48,6 @@ class elasticsearch-demo_vagrant_env {
 	  shell => "/bin/bash",
 	}
 	
-	class { 'java':
-	  distribution => 'jdk',
-	}
-	
 	############################################################################
 	# INSTALL WEBSERVER
 	############################################################################
@@ -109,6 +105,7 @@ class elasticsearch-demo_vagrant_env {
 	class { "elasticsearch":
 	  manage_repo  => true,
 	  repo_version => "1.4",
+	  java_install => true,
 	  init_defaults => {
 	    # "ES_HEAP_SIZE" => "2048m",
 	  },
