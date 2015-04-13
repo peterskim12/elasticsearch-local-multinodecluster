@@ -104,7 +104,7 @@ class elasticsearch-demo_vagrant_env {
 	# Install elasticsearch
 	class { "elasticsearch":
 	  manage_repo  => true,
-	  repo_version => "1.4",
+	  repo_version => "1.5",
 	  java_install => true,
 	  init_defaults => {
 	    # "ES_HEAP_SIZE" => "2048m",
